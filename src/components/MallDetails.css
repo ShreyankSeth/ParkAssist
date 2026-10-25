@@ -1,0 +1,384 @@
+/* 
+ * MallDetails.css - Styles for Mall Header, Navigation Tabs, & User Parking Image
+ */
+
+.mall-details-section {
+  padding-top: 2rem;
+  padding-bottom: 1.5rem;
+}
+
+.mall-header-card {
+  background-color: #ffffff;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-light);
+  padding: 1.75rem 2rem;
+  box-shadow: var(--shadow-card);
+  margin-bottom: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.mall-title-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.mall-name {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.01em;
+}
+
+.real-api-address {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--bg-green-light);
+  border: 1px solid var(--border-green);
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  color: var(--text-main);
+}
+
+.api-loading {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--brand-green-dark);
+  font-weight: 500;
+}
+
+.spin {
+  animation: spin 1.2s linear infinite;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+/* Distinct View Navigation Tabs Bar */
+.view-navigation-tabs {
+  display: flex;
+  gap: 0.75rem;
+  background-color: var(--bg-secondary);
+  padding: 0.35rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+}
+
+.view-tab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  background: transparent;
+  border-radius: var(--radius-sm);
+  transition: var(--transition-fast);
+}
+
+.view-tab:hover {
+  color: var(--brand-green-dark);
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.view-tab.active {
+  background-color: #ffffff;
+  color: var(--brand-green-dark);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Parking Stats Cards Grid */
+.parking-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 1.75rem;
+}
+
+.stat-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+  background-color: var(--bg-secondary);
+  transition: var(--transition-fast);
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-subtle);
+}
+
+.stat-card.total .stat-icon-wrapper {
+  background-color: #e2e8f0;
+  color: #334155;
+}
+
+.stat-card.available {
+  background-color: var(--bg-green-light);
+  border-color: var(--border-green);
+}
+
+.stat-card.available .stat-icon-wrapper {
+  background-color: var(--bg-green-soft);
+  color: var(--brand-green-dark);
+}
+
+.stat-card.booked {
+  background-color: #fffbeb;
+  border-color: #fef3c7;
+}
+
+.stat-card.booked .stat-icon-wrapper {
+  background-color: #fef3c7;
+  color: #d97706;
+}
+
+.stat-icon-wrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.stat-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-value {
+  font-size: 1.8rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--text-main);
+  margin-bottom: 0.2rem;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+/* Overview Info Card & User Parking Image */
+.overview-details-card {
+  background-color: #ffffff;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-light);
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 2rem;
+  align-items: center;
+  box-shadow: var(--shadow-card);
+}
+
+.overview-heading {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+}
+
+.overview-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+}
+
+.meta-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-bottom: 1.5rem;
+}
+
+.meta-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.92rem;
+  color: var(--text-main);
+}
+
+.currency-badge {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: var(--bg-green-soft);
+  color: var(--brand-green-dark);
+  font-weight: 800;
+  font-size: 0.8rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.switch-slots-btn {
+  padding: 0.85rem 1.5rem;
+}
+
+.overview-image-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-parking-photo {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  border: 3px solid var(--brand-green);
+  box-shadow: var(--shadow-card);
+}
+
+.photo-caption {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-top: 0.4rem;
+}
+
+/* Floor Selector Bar inside slots tab */
+.floor-tabs-bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: #ffffff;
+  padding: 1rem 1.5rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-subtle);
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.tabs-label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.tabs-group {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.floor-tab {
+  padding: 0.6rem 1.25rem;
+  border-radius: var(--radius-md);
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  color: var(--text-main);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.floor-tab:hover {
+  border-color: var(--brand-green);
+  color: var(--brand-green-dark);
+}
+
+.floor-tab.active {
+  background-color: var(--brand-green);
+  color: #ffffff;
+  border-color: var(--brand-green);
+  box-shadow: 0 4px 12px rgba(22, 163, 74, 0.25);
+}
+
+@media (max-width: 840px) {
+  .parking-stats-grid {
+    grid-template-columns: 1fr;
+  }
+  .overview-details-card {
+    grid-template-columns: 1fr;
+  }
+  .view-navigation-tabs {
+    flex-direction: column;
+  }
+}
+
+/* BMS Live Counts Strip */
+.bms-live-counts-strip {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 0.85rem 1.25rem;
+  margin-bottom: 1.25rem;
+  box-shadow: var(--shadow-subtle);
+  flex-wrap: wrap;
+}
+
+.count-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-secondary);
+  font-size: 0.86rem;
+  color: var(--text-muted);
+}
+
+.count-pill strong {
+  color: var(--text-main);
+  font-weight: 700;
+}
+
+.count-pill.available {
+  background-color: #f0fdf4;
+  color: #15803d;
+  border: 1px solid #bbf7d0;
+}
+
+.count-pill.available strong {
+  color: #166534;
+}
+
+.count-pill.booked {
+  background-color: #f1f5f9;
+  color: #64748b;
+  border: 1px solid #e2e8f0;
+}
+
+.count-pill.booked strong {
+  color: #334155;
+}
+
+.count-pill.ev {
+  background-color: #eff6ff;
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
+  font-weight: 600;
+  margin-left: auto;
+}
+
+@media (max-width: 640px) {
+  .bms-live-counts-strip {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .count-pill.ev {
+    margin-left: 0;
+  }
+}

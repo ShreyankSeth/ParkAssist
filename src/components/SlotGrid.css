@@ -1,0 +1,226 @@
+/* 
+ * SlotGrid.css - Styles for Parking Slot Matrix & Solid Red Occupied Slots
+ */
+
+.slot-grid-container {
+  padding-top: 1.5rem;
+  padding-bottom: 3rem;
+}
+
+.grid-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.grid-title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.grid-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.slot-legend {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  background-color: var(--bg-secondary);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-light);
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.legend-dot.green { background-color: var(--brand-green); }
+.legend-dot.cyan-glowing { 
+  background-color: #0284c7; 
+  box-shadow: 0 0 8px #0284c7;
+}
+.legend-dot.red { background-color: #ef4444; }
+.legend-dot.blue { background-color: #2563eb; }
+
+/* Parking Slot Grid Matrix */
+.parking-matrix {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 1rem;
+}
+
+.slot-card {
+  background-color: #ffffff;
+  border-radius: var(--radius-md);
+  border: 2px solid var(--border-light);
+  padding: 0.85rem 0.65rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 120px;
+  position: relative;
+  transition: var(--transition-fast);
+  text-align: center;
+}
+
+/* Available Green Slot */
+.slot-card.available {
+  border-color: var(--border-green);
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(22, 163, 74, 0.05);
+}
+
+.slot-card.available:hover {
+  border-color: var(--brand-green);
+  background-color: var(--bg-green-light);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(22, 163, 74, 0.15);
+}
+
+/* Distinct Solid Red Booked Slot (NO HOVER TRANSITION OR TRANSFORM) */
+.slot-card.booked {
+  background-color: #fee2e2 !important;
+  border-color: #ef4444 !important;
+  opacity: 1 !important;
+  cursor: not-allowed !important;
+  transform: none !important; /* NO HOVER TRANSITION */
+  box-shadow: none !important;
+  transition: none !important;
+}
+
+.slot-card.booked:hover {
+  transform: none !important;
+  box-shadow: none !important;
+  background-color: #fee2e2 !important;
+}
+
+.slot-card.booked .slot-code {
+  color: #991b1b;
+}
+
+.car-occupied-icon {
+  color: #ef4444;
+}
+
+.status-text.occupied {
+  background-color: #fca5a5;
+  color: #991b1b;
+  font-weight: 700;
+}
+
+/* Occupied By You Glowing Highlighted Slot (NO HOVER TRANSFORM) */
+.slot-card.my-occupied-slot {
+  background: linear-gradient(135deg, #f0fdf4 0%, #e0f2fe 100%);
+  border: 2px solid #0284c7;
+  box-shadow: 0 0 14px rgba(2, 132, 199, 0.35);
+  cursor: not-allowed;
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+.slot-card.my-occupied-slot:hover {
+  transform: none !important;
+}
+
+.car-my-slot-icon {
+  color: #0284c7;
+}
+
+.status-text.my-slot {
+  background-color: #0284c7;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+/* Selected Slot */
+.slot-card.selected {
+  border-color: #2563eb;
+  background-color: #eff6ff;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+.slot-top-bar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.slot-code {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.slot-badge-icon.ev { color: #eab308; }
+.slot-badge-icon.handi { color: #3b82f6; }
+
+.slot-icon-center {
+  margin: 0.5rem 0;
+}
+
+.slot-vacant-indicator {
+  color: var(--brand-green);
+  opacity: 0.85;
+}
+
+.slot-card.available:hover .slot-vacant-indicator {
+  transform: scale(1.1);
+  color: var(--brand-green-dark);
+}
+
+.slot-footer {
+  width: 100%;
+}
+
+.status-text {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.status-text.open {
+  background-color: var(--bg-green-soft);
+  color: var(--brand-green-dark);
+}
+
+.status-text.selected {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+@media (max-width: 640px) {
+  .parking-matrix {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 0.75rem;
+  }
+  .slot-card {
+    min-height: 105px;
+    padding: 0.65rem 0.5rem;
+  }
+}

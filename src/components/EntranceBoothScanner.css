@@ -1,0 +1,207 @@
+/* 
+ * EntranceBoothScanner.css - Styles for Entry Booth Camera Scanner & Barrier Gate Simulation
+ */
+
+.booth-scanner-section {
+  padding-top: 1.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.booth-card {
+  background-color: #ffffff;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-light);
+  padding: 2rem;
+  box-shadow: var(--shadow-card);
+}
+
+.booth-header {
+  margin-bottom: 1.75rem;
+}
+
+.booth-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-top: 0.35rem;
+  margin-bottom: 0.35rem;
+}
+
+.booth-subtitle {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+
+.booth-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+/* Scanner Viewport Camera Box */
+.camera-screen {
+  background-color: #0f172a;
+  border-radius: var(--radius-md);
+  height: 260px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 3px solid #1e293b;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.8);
+}
+
+.camera-screen.verified {
+  border-color: var(--brand-green);
+  box-shadow: inset 0 0 25px rgba(22, 163, 74, 0.4);
+}
+
+.scan-beam {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, #22c55e, transparent);
+  box-shadow: 0 0 15px #22c55e;
+  z-index: 10;
+}
+
+/* Camera Frame Corner Markers */
+.viewport-corner {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 3px solid #64748b;
+}
+
+.viewport-corner.top-left { top: 12px; left: 12px; border-right: none; border-bottom: none; }
+.viewport-corner.top-right { top: 12px; right: 12px; border-left: none; border-bottom: none; }
+.viewport-corner.bottom-left { bottom: 12px; left: 12px; border-right: none; border-top: none; }
+.viewport-corner.bottom-right { bottom: 12px; right: 12px; border-left: none; border-top: none; }
+
+/* License Plate UI */
+.license-plate-display {
+  background-color: #fef08a;
+  border: 3px solid #000000;
+  border-radius: 6px;
+  padding: 0.5rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+  transform: scale(1.05);
+}
+
+.ind-strip {
+  background-color: #0284c7;
+  color: #ffffff;
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 0.15rem 0.3rem;
+  border-radius: 3px;
+}
+
+.plate-number {
+  font-family: monospace;
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: #000000;
+  letter-spacing: 0.1em;
+}
+
+.viewport-status {
+  position: absolute;
+  bottom: 12px;
+  background: rgba(15, 23, 42, 0.85);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Controls Column */
+.booth-info-card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.info-heading {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.gate-indicator-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background-color: #ffffff;
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+}
+
+.gate-light {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+}
+
+.gate-light.red-light {
+  background-color: #ef4444;
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.8);
+}
+
+.gate-light.green-light {
+  background-color: #22c55e;
+  box-shadow: 0 0 12px rgba(34, 197, 94, 0.8);
+}
+
+.gate-state-text {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.booth-details-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dashed var(--border-light);
+  padding-bottom: 0.3rem;
+}
+
+.start-scan-btn {
+  width: 100%;
+  padding: 0.85rem;
+  margin-top: 0.5rem;
+}
+
+.reset-scan-btn {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .booth-grid {
+    grid-template-columns: 1fr;
+  }
+}

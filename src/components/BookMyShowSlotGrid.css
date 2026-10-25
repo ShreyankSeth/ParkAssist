@@ -1,0 +1,276 @@
+/* 
+ * BookMyShowSlotGrid.css
+ * Styling inspired directly by BookMyShow cinema seat selection matrix.
+ * Compact boxes, green outlines, light grey booked slots, blue user pass outlines.
+ */
+
+.bms-container {
+  padding-top: 1rem;
+  padding-bottom: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* BMS Legend Bar */
+.bms-legend-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 0.85rem 1.25rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.bms-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.bms-slot-box.sample {
+  width: 28px;
+  height: 28px;
+  pointer-events: none;
+}
+
+.ev-legend-icon {
+  font-size: 1.1rem;
+  color: #eab308;
+}
+
+/* Floor Cards Stacked in Single View */
+.bms-all-floors-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+}
+
+.bms-floor-card {
+  background-color: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-subtle);
+  overflow-x: auto;
+}
+
+/* EV Dedicated Floor Custom Theme */
+.bms-floor-card.ev-floor-theme {
+  border: 1.5px solid #ca8a04;
+  background: radial-gradient(circle at 95% 5%, #fefce8 0%, #ffffff 70%);
+  box-shadow: 0 4px 20px -2px rgba(234, 179, 8, 0.15);
+}
+
+.bms-floor-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px dashed var(--border-light);
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.bms-floor-title-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.bms-floor-name {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.bms-ev-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background-color: #fef08a;
+  color: #854d0e;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+  border: 1px solid #fde047;
+}
+
+.bms-floor-pricing-badge {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+
+.price-tag {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--brand-green-dark);
+}
+
+.price-sub {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+/* Rows Container */
+.bms-rows-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  align-items: center;
+  min-width: 680px;
+}
+
+.bms-row-line {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  justify-content: center;
+}
+
+/* Row Letter */
+.bms-row-letter {
+  width: 24px;
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--text-muted);
+  text-align: center;
+  user-select: none;
+}
+
+/* Left & Right Bays */
+.bms-bay {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+/* Aisle Separation */
+.bms-aisle {
+  width: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aisle-line {
+  width: 100%;
+  height: 2px;
+  background: repeating-linear-gradient(90deg, #cbd5e1 0, #cbd5e1 4px, transparent 4px, transparent 8px);
+}
+
+/* ==============================================================
+   BOOKMYSHOW SLOT BOXES - COMPACT SIZE (~34px × 34px)
+   ============================================================== */
+.bms-slot-box {
+  width: 35px;
+  height: 35px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-size: 0.82rem;
+  font-weight: 700;
+  background-color: #ffffff;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.15s ease-in-out;
+  user-select: none;
+}
+
+/* 1. NOT BOOKED (AVAILABLE): Green Outline, White BG, Green text */
+.bms-slot-box.available {
+  border: 1.5px solid var(--brand-green);
+  color: var(--brand-green);
+  background-color: #ffffff;
+}
+
+.bms-slot-box.available:hover {
+  background-color: var(--bg-green-soft);
+  color: var(--brand-green-dark);
+  transform: scale(1.12);
+  box-shadow: 0 4px 10px rgba(22, 163, 74, 0.25);
+  z-index: 2;
+}
+
+/* 2. ALREADY BOOKED: Solid Light Grey, Light Grey border, Grey text */
+.bms-slot-box.booked {
+  background-color: #e2e8f0 !important;
+  border: 1.5px solid #cbd5e1 !important;
+  color: #94a3b8 !important;
+  cursor: not-allowed !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* 3. BOOKED BY YOU: Blue Outline, Light Blue BG */
+.bms-slot-box.my-slot {
+  border: 2px solid #2563eb !important;
+  background-color: #eff6ff !important;
+  color: #1d4ed8 !important;
+  font-weight: 800;
+  box-shadow: 0 0 8px rgba(37, 99, 235, 0.35);
+  cursor: not-allowed;
+}
+
+/* 4. CURRENTLY SELECTED: Amber / Yellow glow (BookMyShow style) */
+.bms-slot-box.selected {
+  border: 2px solid #ca8a04 !important;
+  background-color: #fef08a !important;
+  color: #854d0e !important;
+  font-weight: 800;
+  transform: scale(1.15);
+  box-shadow: 0 0 12px rgba(234, 179, 8, 0.5);
+  z-index: 3;
+}
+
+/* Mini EV Bolt Badge on Top-Right Corner */
+.mini-ev-bolt {
+  position: absolute;
+  top: -4px;
+  right: -3px;
+  font-size: 0.65rem;
+  color: #ca8a04;
+  line-height: 1;
+}
+
+/* Driveway Bottom Access Indicator */
+.bms-driveway-indicator {
+  margin-top: 1.25rem;
+  padding-top: 0.75rem;
+  border-top: 1px dashed var(--border-light);
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+}
+
+@media (max-width: 768px) {
+  .bms-legend-bar {
+    gap: 0.85rem;
+  }
+  .bms-aisle {
+    width: 24px;
+  }
+  .bms-bay {
+    gap: 0.3rem;
+  }
+  .bms-slot-box {
+    width: 30px;
+    height: 30px;
+    font-size: 0.75rem;
+  }
+}

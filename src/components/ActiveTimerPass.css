@@ -1,0 +1,287 @@
+/* 
+ * ActiveTimerPass.css - Styles for Ticket Pass, Countdown Clock, & Scheduled Banner
+ */
+
+.active-ticket-section {
+  padding-top: 1.5rem;
+  padding-bottom: 2.5rem;
+}
+
+/* Scheduled Notice Banner */
+.scheduled-notice-banner {
+  background-color: #f0fdf4;
+  border: 2px solid #bbf7d0;
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 4px 16px rgba(22, 163, 74, 0.1);
+}
+
+.scheduled-icon-bg {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: #dcfce7;
+  color: #15803d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.scheduled-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #15803d;
+  margin-bottom: 0.15rem;
+}
+
+.scheduled-text {
+  font-size: 0.85rem;
+  color: #166534;
+  line-height: 1.4;
+}
+
+/* 10-Minute Warning Alert Toast */
+.expiry-warning-banner {
+  background-color: #fffbe6;
+  border: 2px solid #ffe58f;
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 4px 16px rgba(245, 158, 11, 0.15);
+}
+
+.warning-icon-bg {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: #fef3c7;
+  color: #d97706;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.warning-pulse {
+  animation: pulseGlow 1.5s infinite;
+}
+
+.warning-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #92400e;
+  margin-bottom: 0.15rem;
+}
+
+.warning-text {
+  font-size: 0.85rem;
+  color: #78350f;
+  line-height: 1.4;
+}
+
+/* Ticket Pass Frame */
+.ticket-card-frame {
+  background: linear-gradient(135deg, #ffffff 0%, var(--bg-green-light) 100%);
+  border: 2px solid var(--brand-green);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+.ticket-header {
+  background-color: var(--brand-green);
+  color: #ffffff;
+  padding: 0.85rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ticket-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #ffffff;
+}
+
+.ticket-title {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.ticket-id {
+  font-size: 0.85rem;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.05em;
+}
+
+.ticket-grid-body {
+  padding: 1.75rem;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.ticket-mall-title h3 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 0.4rem;
+}
+
+.ticket-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+}
+
+.info-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.info-value {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.slot-highlight {
+  font-size: 1.4rem;
+  color: var(--brand-green-dark);
+}
+
+.car-highlight {
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+/* Countdown Box */
+.ticket-timer-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 1.25rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-green);
+  box-shadow: var(--shadow-subtle);
+}
+
+.timer-header-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.75rem;
+}
+
+.countdown-box {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.time-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--bg-secondary);
+  padding: 0.5rem 0.65rem;
+  border-radius: var(--radius-sm);
+  min-width: 52px;
+}
+
+.countdown-box.warning .time-unit {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.countdown-box.scheduled .time-unit {
+  background-color: #dcfce7;
+  color: #15803d;
+}
+
+.time-num {
+  font-size: 1.4rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--text-main);
+}
+
+.countdown-box.warning .time-num {
+  color: #d97706;
+}
+
+.countdown-box.scheduled .time-num {
+  color: #15803d;
+}
+
+.time-lbl {
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-top: 0.15rem;
+}
+
+.time-colon {
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: var(--text-muted);
+}
+
+.pass-qr-stub {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background-color: var(--bg-green-light);
+  padding: 0.5rem 0.85rem;
+  border-radius: var(--radius-sm);
+  border: 1px dashed var(--border-green);
+  width: 100%;
+}
+
+.qr-stub-icon {
+  color: var(--brand-green-dark);
+}
+
+.stub-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--brand-green-dark);
+}
+.clock{
+  transform:rotate(Xdeg);
+}
+
+@media (max-width: 768px) {
+  .ticket-grid-body {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}

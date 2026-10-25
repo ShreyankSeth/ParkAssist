@@ -1,0 +1,137 @@
+/* 
+ * SlotBookingModal.css - Clock style scrollable / select time picker styles
+ */
+
+.booking-modal {
+  max-width: 480px;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Clock Picker Box */
+.clock-picker-box {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 0.65rem 0.85rem;
+  margin-top: 0.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.clock-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.clock-select-row {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.clock-select {
+  padding: 0.4rem 0.6rem;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border-light);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-main);
+  background-color: #ffffff;
+  outline: none;
+  cursor: pointer;
+}
+
+.clock-select:focus {
+  border-color: var(--brand-green);
+  box-shadow: 0 0 0 2px rgba(22, 163, 74, 0.15);
+}
+
+.clock-select.ampm {
+  background-color: var(--bg-green-soft);
+  color: var(--brand-green-dark);
+  border-color: var(--border-green);
+}
+
+.clock-colon {
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+}
+
+.time-error-banner {
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #dc2626;
+  padding: 0.6rem 0.85rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4rem;
+  margin-top: 0.6rem;
+  line-height: 1.4;
+}
+
+.time-success-hint {
+  font-size: 0.8rem;
+  color: var(--brand-green-dark);
+  margin-top: 0.4rem;
+  background-color: var(--bg-green-light);
+  padding: 0.4rem 0.65rem;
+  border-radius: var(--radius-sm);
+}
+
+.fare-summary-card {
+  background-color: var(--bg-green-light);
+  border: 1px solid var(--border-green);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.fare-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.fare-row.total {
+  border-top: 1px dashed var(--border-green);
+  padding-top: 0.6rem;
+  margin-top: 0.2rem;
+  font-weight: 700;
+  color: var(--text-main);
+  font-size: 1rem;
+}
+
+.total-amount {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--brand-green-dark);
+}
+
+.inline-icon {
+  display: inline;
+  vertical-align: text-bottom;
+}
+
+@media (max-width: 480px) {
+  .clock-picker-box {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+}
